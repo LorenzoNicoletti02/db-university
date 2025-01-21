@@ -5,12 +5,14 @@ inner join degrees
 on students.degree_id = degrees.id
 where degrees.name = "corso di laurea in economia"
 
+
 **Esercizio 2**
 select degrees.name, departments.name, departments.id
 from degrees
 inner join departments
 on degrees.department_id = departments.id
 where departments.name = "dipartimento di neuroscienze"
+
 
 **Esercizio 3**
 select teachers.name, teachers.surname, teachers.id, courses.name
@@ -32,3 +34,35 @@ INNER JOIN departments
 on degrees.department_id = departments.id
 
 ORDER BY students.name, students.surname
+
+
+**Esercizio 5**
+select teachers.name, teachers.surname, degrees.name, courses.name
+from teachers
+
+inner join course_teacher
+on course_teacher.teacher_id = teachers.id
+
+inner join courses
+on courses.id = course_teacher.course_id
+
+inner join degrees
+on degrees.id = courses.degree_id
+
+
+**Esercizio 6**
+select departments.name, teachers.name, teachers.surname
+from teachers
+inner join course_teacher
+on teachers.id = course_teacher.teacher_id
+
+inner join courses 
+on courses.id = course_teacher.course_id
+
+inner join degrees 
+on degrees.id = courses.degree_id
+
+inner join departments 
+on departments.id = degrees.department_id
+
+where departments.name = "Dipartimento di matematica"
