@@ -1,0 +1,34 @@
+**Esercizio 1**
+select students.name, students.surname, degrees.name
+from students
+inner join degrees
+on students.degree_id = degrees.id
+where degrees.name = "corso di laurea in economia"
+
+**Esercizio 2**
+select degrees.name, departments.name, departments.id
+from degrees
+inner join departments
+on degrees.department_id = departments.id
+where departments.name = "dipartimento di neuroscienze"
+
+**Esercizio 3**
+select teachers.name, teachers.surname, teachers.id, courses.name
+from teachers
+inner join course_teacher
+on teachers.id = course_teacher.teacher_id
+inner join courses
+on course_teacher.course_id = courses.id
+where teachers.id = 44
+
+
+**Esercizio 4**
+SELECT *
+FROM students
+INNER JOIN degrees 
+on students.degree_id = degrees.id
+
+INNER JOIN departments
+on degrees.department_id = departments.id
+
+ORDER BY students.name, students.surname
