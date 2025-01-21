@@ -1,0 +1,18 @@
+**Esercizio 1**
+SELECT *
+FROM students
+WHERE date_of_birth like "1990%"
+
+**Esercizio 2**
+SELECT * 
+FROM courses
+WHERE cfu > 10
+
+**Esercizio 3**
+
+**Esercizio 4**
+SELECT * 
+FROM courses
+WHERE period = "I semestre" and year = "1"
+
+**Esercizio 5**
